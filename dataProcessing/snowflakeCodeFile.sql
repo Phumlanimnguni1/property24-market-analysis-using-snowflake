@@ -1,33 +1,52 @@
 -- Snowflake Worksheet
 
 --1. Display all properties in the database.
-
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES;
 
 --2. Show only the CITY, PROVINCE, and PROPERTY_PRICE columns.
-
+select city, province, property_price
+from PROPERTY24_DB.PUBLIC.PROPERTIES;
 
 --3. List all distinct provinces in the table.
-
+select distinct province
+from PROPERTY24_DB.PUBLIC.PROPERTIES;
 
 --4. Find all properties located in Gauteng.
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+where province = 'Gauteng';
 
 --5. Show properties priced under R1,500,000.
-
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+where property_price < 1500000;
 
 --6. List properties with more than 3 bedrooms.
-
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+where bedrooms > 3;
 
 --7. Find properties with parking for at least 2 cars.
-
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+where parking >= 2;
 
 --8. Show properties where the monthly repayment is greater than R25,000.
-
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+where monthly_repayment > 25000;
 
 --9. Show all properties ordered by property price from highest to lowest.
-
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+order by property_price desc;
 
 --10. List properties ordered by floor size from smallest to largest.
 
+select *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+order by floor_size asc;
 
 --11. Show Gauteng properties ordered by monthly repayment.
 
@@ -42,6 +61,10 @@
 
 
 --15. Show the 10 most expensive properties.
+select  *
+from PROPERTY24_DB.PUBLIC.PROPERTIES
+order by property_price desc
+limit 10;
 
 --16. Show the 5 cheapest properties.
 
